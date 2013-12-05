@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Phylojive : integrating phylogenies with online biodiverstiy data sources" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Phylojive</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/TRIN/phyloJIVE">View on GitHub</a>
+
+          <h1 id="project_title">Phylojive</h1>
+          <h2 id="project_tagline">integrating phylogenies with online biodiverstiy data sources</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/TRIN/phyloJIVE/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/TRIN/phyloJIVE/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>The growing catalogue of online biodiversity data sources has reached a scale where data integration can inform research. Information about species is being aggregated at national and international scales. Here we provide a web application which places biodiversity web-services can placed into an evolutionary context.</p>
+
+<h3>
+<a name="about-phylojive" class="anchor" href="#about-phylojive"><span class="octicon octicon-link"></span></a>About PhyloJIVE</h3>
+
+<p>... is a web based application that places biodiversity information aggregated from many sources onto compact phylogenetic trees. 
+It is </p>
+
+<ul>
+<li>is entirely client-side</li>
+<li>renders in the web browser on a HTML 5 canvas.</li>
+<li>requires no plugins</li>
+<li>is open source</li>
+<li>works in current versions of all major browsers</li>
+<li>is built on the TheJit (javascript infovis library)</li>
+</ul><h3>
+<a name="what-can-the-end-user-do-in-the-browser" class="anchor" href="#what-can-the-end-user-do-in-the-browser"><span class="octicon octicon-link"></span></a>What can the end user do in the browser?</h3>
+
+<ul>
+<li>Change the order of branches and clades</li>
+<li>Ladderise</li>
+<li>Search for taxa</li>
+<li>Select up to three characters for simultaneous display on the tree</li>
+<li>Change scale</li>
+<li>Collapse / expand select clades</li>
+<li>Set new roots for the tree</li>
+<li>Explore taxon specific information pulled from pre-configured webservices</li>
+<li>Input their own (newick formatted) phylogentic tree for linkage to webservices and characters</li>
+</ul><h3>
+<a name="integration" class="anchor" href="#integration"><span class="octicon octicon-link"></span></a>Integration</h3>
+
+<p>Web-services PhyloJVE can be configured easily to asynchronously access information from many online biodiversity data sources. Examples providers include The Atlas of Living Australia, The Catalogue of Life, The National Species List and The World Register of Marine Species.
+This information is accessed and displayed as the tree is explored by end users dynamically and immediately on hover, in summary tables, and in detail.</p>
+
+<h3>
+<a name="performance" class="anchor" href="#performance"><span class="octicon octicon-link"></span></a>Performance</h3>
+
+<p>Performance is determined by the viewer’s computer and browser.
+Trees can have at least 4000 taxa with matrices of at least 100 characters.</p>
+
+<h3>
+<a name="characters-species-and-taxonomic" class="anchor" href="#characters-species-and-taxonomic"><span class="octicon octicon-link"></span></a>Characters (Species and Taxonomic)</h3>
+
+<p>Up to three characters from a matrix can be chosen for comparison at a time.
+Putative differences in the ancestral states qualitative characters are inferred from (Fitch) parsimony.
+Putative changes in the ancestral states of quantitative characters are inferred from a phylogenetically weighted comparison of means and standard deviations.
+The reconstructed ancestral state of the first character is used to determine branch colour. Transitions in any of the three characters is indicated by a red box.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Phylojive maintained by <a href="https://github.com/TRIN">TRIN</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

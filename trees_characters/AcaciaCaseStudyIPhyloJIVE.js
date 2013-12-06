@@ -10,7 +10,7 @@
 
         	codeBase:'../..',
             width: 500,
-            height:1600,        
+            height:2400,        
         	alignName:true,
         	lateralise:false, 
        		levelsToShow:8,

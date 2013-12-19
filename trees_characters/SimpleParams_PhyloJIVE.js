@@ -1,14 +1,27 @@
     function init() {
 
         phylogenyExplorer_init({
+        
+        
+// params
+			codeBase:'../..', 		//  the location where js code
+            width: 550,				//  visualisation window width
+            height:800,   			//  visualisation window depth    
+        	alignName:true,			//  place the taxon names into a column
+        	lateralise:false, 		// order the phylogeny by branches
+       		levelsToShow:10,		// depth of the tree
+        	branchMultiplier:1,
+            
 
+        	
+//  Tree and Characters 
 // trees are in newick form. quotes and other special web characters should be avoided or escaped in the usual way for the web. Should a large newick tree fail to display then the first thing to check for is escape characters such as quotes for informal names or unnamed specimens.
 
-tree: '((Replace:0.007667365048364433,(this:0.005369261896034483,(with:0.011621228506591308,your:2.100100506802205E-6):0.0027929350821030707):0.012281999999150084):0.0400709772514759,(((own:0.0012025949078822151,phylogeny:0.0024332420478173633):0.006421131153429474,(in:0.008984623535641459,(newick:0.0012074724370825796,form:0.004013224017395373):0.003744210327868966):0.00542385295016945):0.023689622298502563,(tree:0.036702751435909745,((take:0.002448206437464337,care:0.0024347868455663196):0.001504447318880206,(to:0.0023787045835393372,(remove:2.100100506802205E-6,quotes_and_other_html_special_characters:0.01728824049672087):0.010690121488212884):6.006911375427831E-4):0.005347250770554118):0.014788598652250115):0.0400709772514759);',
+			tree: '((Replace:0.007667365048364433,(this:0.005369261896034483,(with:0.011621228506591308,your:2.100100506802205E-6):0.0027929350821030707):0.012281999999150084):0.0400709772514759,(((own:0.0012025949078822151,phylogeny:0.0024332420478173633):0.006421131153429474,(in:0.008984623535641459,(newick:0.0012074724370825796,form:0.004013224017395373):0.003744210327868966):0.00542385295016945):0.023689622298502563,(tree:0.036702751435909745,((take:0.002448206437464337,care:0.0024347868455663196):0.001504447318880206,(to:0.0023787045835393372,(remove:2.100100506802205E-6,quotes_and_other_html_special_characters:0.01728824049672087):0.010690121488212884):6.006911375427831E-4):0.005347250770554118):0.014788598652250115):0.0400709772514759);',
             			
 // a list of characters in CharJSON form ie an array of taxa each which has an array of character attributes. Characters can be qualitative or quantitative
             			
-            character: {
+		character: {
     "Replace": {
         "modelled annual mean moisture index": [
             0.6837124164
@@ -4656,20 +4669,9 @@ tree: '((Replace:0.007667365048364433,(this:0.005369261896034483,(with:0.0116212
             13.6
         ]
     }
-},
-	        
-        	codeBase:'../..', 		//  the location where js code
-            width: 550,				//  visualisation window width
-            height:800,   			//  visualisation window depth    
-        	alignName:true,			//  place the taxon names into a column
-        	lateralise:false, 		// order the phylogeny by branches
-       		levelsToShow:10,		// depth of the tree
-        	branchMultiplier:1 
-        	
-        	// the information that appears on hover including maps can be configured to point to other data sources. For how see other examples
-        	//can be configured to point to other data sources. For how see other examples
+} 
 
-
-        });
-        //testcase();
+        }); 
     } 
+
+ 

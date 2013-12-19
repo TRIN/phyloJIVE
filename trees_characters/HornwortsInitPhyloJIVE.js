@@ -1,47 +1,25 @@
     function init() {
 
         phylogenyExplorer_init({
-            
-	   
-        	codeBase:'../..',
+        
+        
+// params
+            codeBase:'../..',
             width: 550,
             width:800,        
         	alignName:true,
         	lateralise:false, 
        		levelsToShow:5,
         	branchMultiplier:1,
-            presentClade: function (clade) {
-              var tmpl = st.config.tmpl,
-                nodeList = [],
-                node, html, split;
-                for (var i = 0; ((i < clade.length) & (i < 30)); i++) {
-                  node = {}
-                  node.name = clade [ i ].name;
-                  node.plus = clade [ i ].name.replace(/\s+/g,'+');
-                  split = node.name.split( /\s+/ );
-                  if ( split.length > 1 ){
-                    node.genus = split [ 0 ];
-                    node.species = split [ 1 ];              
-                  } else {
-                    node.species = split [ 0 ];
-                  }
-                  node.rel = node.species + '' + i;
-                  node.index = i;
-                  nodeList.push ( node );            
-                }
-              if ( tmpl ) {
-                tmpl = _.template ( tmpl );
-                html = tmpl ( {nodeList: nodeList});
-              } else {
-                
-              }
-              return html;
-
-            }, //presentClade 
-            tmpl : '<table style="border: none"><tbody><tr><th></th><th>links</th><th> </th><th> </th><th> </th><th> </th></tr><% _.each(nodeList , function( value ) { %> <tr><td><a href="http://bie.ala.org.au/species/<%= value.plus %>" title="<%= value.name %> ALA species page" rel="<%= value.rel %>" class="thumbImage1"><%= value.name %></a></td><td><a href="http://biodiversity.org.au/name/<%= value.plus %>" title="about <%= value.name %> in NSL nomenclator " rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a></td><td><a href="http://www.anbg.gov.au/cgi-bin/apiiGenus?genus=<%= value.genus %>&species=<%= value.species %>" title="images of <%= value.name %> in Aust. plant Image Index" rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a><td><a href="http://biocache.ala.org.au/ws/density/map?q=<%= value.name %>" title="<%= value.name %> Aus density Map (if sufficient samples)" rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div></id="thumb1"></a></td></td><td><a href="http://eol.org/search/show?q=<%= value.plus %>&amp;type[]=taxon_concept&amp;type[]=image&amp;commit=Filter" title="images of <%= value.name %> in EOL" rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a></td></tr> <% }); %></tbody></table></div>',
-
-			tree: '((Folioceros_fuciformis:0.007667365048364433,(Anthoceros_fragilis:0.005369261896034483,(Anthoceros_laminiferus:0.011621228506591308,Anthoceros_punctatus:2.100100506802205E-6):0.0027929350821030707):0.012281999999150084):0.0400709772514759,(((Dendroceros_subgenus_apoceros:0.0012025949078822151,Dendroceros_subgenus_dendroceros:0.0024332420478173633):0.006421131153429474,(Megaceros_flagellaris:0.008984623535641459,(Megaceros_gracilis:0.0012074724370825796,Megaceros_pellucidus:0.004013224017395373):0.003744210327868966):0.00542385295016945):0.023689622298502563,(Notothylas_javanicus:0.036702751435909745,((Phaeoceros_tuberosus:0.002448206437464337,Phaeoceros_carolinianus:0.0024347868455663196):0.001504447318880206,(Phaeoceros_engellii:0.0023787045835393372,(Phaeoceros_inflatus:2.100100506802205E-6,Phaeoceros_evanidus:0.01728824049672087):0.010690121488212884):6.006911375427831E-4):0.005347250770554118):0.014788598652250115):0.0400709772514759);',
-            character: {
+		    firstCharacter: 'modelled annual mean moisture index', 
+		    
+// tmpl provides a template into which simple name based searches placed
+         tmpl : '<table style="border: none"><tbody><tr><th></th><th>links</th><th> </th><th> </th><th> </th><th> </th></tr><% _.each(nodeList , function( value ) { %> <tr><td><a href="http://bie.ala.org.au/species/<%= value.plus %>" title="<%= value.name %> ALA species page" rel="<%= value.rel %>" class="thumbImage1"><%= value.name %></a></td><td><a href="http://biodiversity.org.au/name/<%= value.plus %>" title="about <%= value.name %> in NSL nomenclator " rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a></td><td><a href="http://www.anbg.gov.au/cgi-bin/apiiGenus?genus=<%= value.genus %>&species=<%= value.species %>" title="images of <%= value.name %> in Aust. plant Image Index" rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a><td><a href="http://biocache.ala.org.au/ws/density/map?q=<%= value.name %>" title="<%= value.name %> Aus density Map (if sufficient samples)" rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div></id="thumb1"></a></td></td><td><a href="http://eol.org/search/show?q=<%= value.plus %>&amp;type[]=taxon_concept&amp;type[]=image&amp;commit=Filter" title="images of <%= value.name %> in EOL" rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a></td></tr> <% }); %></tbody></table></div>',
+		     
+        	
+//  Tree and Characters 
+     tree: '((Folioceros_fuciformis:0.007667365048364433,(Anthoceros_fragilis:0.005369261896034483,(Anthoceros_laminiferus:0.011621228506591308,Anthoceros_punctatus:2.100100506802205E-6):0.0027929350821030707):0.012281999999150084):0.0400709772514759,(((Dendroceros_subgenus_apoceros:0.0012025949078822151,Dendroceros_subgenus_dendroceros:0.0024332420478173633):0.006421131153429474,(Megaceros_flagellaris:0.008984623535641459,(Megaceros_gracilis:0.0012074724370825796,Megaceros_pellucidus:0.004013224017395373):0.003744210327868966):0.00542385295016945):0.023689622298502563,(Notothylas_javanicus:0.036702751435909745,((Phaeoceros_tuberosus:0.002448206437464337,Phaeoceros_carolinianus:0.0024347868455663196):0.001504447318880206,(Phaeoceros_engellii:0.0023787045835393372,(Phaeoceros_inflatus:2.100100506802205E-6,Phaeoceros_evanidus:0.01728824049672087):0.010690121488212884):6.006911375427831E-4):0.005347250770554118):0.014788598652250115):0.0400709772514759);',
+    character: {
     "Anthoceros punctatus": {
         "modelled annual mean moisture index": [
             0.6837124164
@@ -4689,7 +4667,42 @@
             13.6
         ]
     }
-},
-        });
-        //testcase();
+},			    	
+             
+   
+// alternative functions which  define actions on hover and click on nodes and clades
+// amend presentClade to replace  underscores with spaces in taxon names
+
+        presentClade: function (clade) {
+              var tmpl = st.config.tmpl,
+                nodeList = [],
+                node, html, split;
+                for (var i = 0; ((i < clade.length) & (i < 30)); i++) {
+                  node = {}
+                  node.name = clade [ i ].name;
+                  node.plus = clade [ i ].name.replace(/\s+/g,'+');
+                  split = node.name.split( /\s+/ );
+                  if ( split.length > 1 ){
+                    node.genus = split [ 0 ];
+                    node.species = split [ 1 ];              
+                  } else {
+                    node.species = split [ 0 ];
+                  }
+                  node.rel = node.species + '' + i;
+                  node.index = i;
+                  nodeList.push ( node );            
+                }
+              if ( tmpl ) {
+                tmpl = _.template ( tmpl );
+                html = tmpl ( {nodeList: nodeList});
+              } else {
+                
+              }
+              return html;
+
+            }, //presentClade 
+         	 
+        }); 
     } 
+
+ 

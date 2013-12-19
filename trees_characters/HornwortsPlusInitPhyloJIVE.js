@@ -2,8 +2,8 @@
 
         phylogenyExplorer_init({
         	codeBase:'../..',
-            width: 550,
-            width:800,        
+            width: 450,
+            height:800,        
         	alignName:true,
         	lateralise:false, 
        		levelsToShow:5,

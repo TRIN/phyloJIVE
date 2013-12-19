@@ -6,7 +6,7 @@
 	   tmpl : '<table style="border: none"><tbody><tr><th></th><th>links</th><th> </th><th> </th><th> </th><th> </th></tr><% _.each(nodeList , function( value ) { %> <tr><td><a href="http://bie.ala.org.au/species/<%= value.plus %>" title="<%= value.name %> ALA species page" rel="<%= value.rel %>" class="thumbImage1"><%= value.name %></a></td><td><a href="http://biodiversity.org.au/name/<%= value.plus %>" title="about <%= value.name %> in NSL nomenclator " rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a></td><td><a href="http://www.anbg.gov.au/cgi-bin/apiiGenus?genus=<%= value.genus %>&species=<%= value.species %>" title="images of <%= value.name %> in Aust. plant Image Index" rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a><td><a href="http://biocache.ala.org.au/ws/density/map?q=<%= value.name %>" title="<%= value.name %> Aus density Map (if sufficient samples)" rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div></id="thumb1"></a></td></td><td><a href="http://eol.org/search/show?q=<%= value.plus %>&amp;type[]=taxon_concept&amp;type[]=image&amp;commit=Filter" title="images of <%= value.name %> in EOL" rel="<%= value.rel %>" class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a></td></tr> <% }); %></tbody></table></div>',
 
         	codeBase:'../..',
-            width: 800,
+            width: 500,
             height: 1800,        
         	alignName:true,
         	lateralise:false, 

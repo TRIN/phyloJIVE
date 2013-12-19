@@ -2,11 +2,11 @@
 
         phylogenyExplorer_init({
         	codeBase:'../..',
-            width: 800,
+            width: 450,
             height:1200,        
         	alignName:true,
         	lateralise:false, 
-       		levelsToShow:12,
+       		levelsToShow: 12,
         	branchMultiplier:5,
             presentClade: function (clade) {
               var tmpl = st.config.tmpl,

@@ -18,8 +18,9 @@
         <h1 id="project_title">about charJSON<img alt="darwin sketch"
             src="images/Darwin_sketch.png" width="120" height="120"
             align="right"></h1>
-        <h2 id="project_tagline">... and how to create it</h2>
-        <p align="right">&nbsp; <br>
+        <h5 id="project_tagline">and how to create it</h5>
+        <p align="left"><font color="#ffcccc">&nbsp;.....&nbsp; used
+            by&nbsp; <a href="index.html">phyloJIVE</a>&nbsp; </font><br>
         </p>
         <section id="downloads"> <a class="zip_download_link"
             href="https://github.com/TRIN/phyloJIVE/zipball/master">Download
@@ -68,13 +69,31 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2><br>
-        </h2>
+        <h2>About charJSON</h2>
+        <p>charJSON is a JSON data structure for representing
+          qualitative and quantitative traits/characters. It can&nbsp;
+          be parsed by most programming languages. <a
+            href="charJSONFormalSpec.html">Here</a> is&nbsp; a formal
+          description of charJSON in Extended Backus-Naur Form&nbsp;
+          (EBNF).<br>
+        </p>
+        <p>charJSON is designed to be portable. It lacks the rigour of
+          delta and LUCID matrices which it is NOT designed to replace.
+          It requires no implicit code or assumptions. It is not
+          designed to create keys nor to help code them. Rather, just as
+          a light weight means to transport trait information. <br>
+        </p>
+        <p>Here we provide scripts which can transform csv tables of
+          trait information (produced by lucid, delta, excel, or
+          mesquite) into charJSON. <br>
+        </p>
         <h2><a name="Instructions_and_test_cases"></a>Instructions and
           test cases</h2>
-        &nbsp;Here is a <a
-          href="charJSON%20converstion%20scripts/csv2json.awk">script</a>
-        that will take your csv file and return charJSON.<br>
+        &nbsp;Here are scripts for <a
+          href="charJSON%20converstion%20scripts/csv2json.awk">windows</a>
+        and <a
+          href="charJSON%20converstion%20scripts/unix_csv2json.awk">unix/linux/mac</a>
+        that will convert a csv file to charJSON.<br>
         <br>
         The original File must<br>
         <ol>

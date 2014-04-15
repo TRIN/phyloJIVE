@@ -2,8 +2,8 @@
 
         phylogenyExplorer_init({
         	codeBase:'../..',
-            width: 450,
-            height:800,        
+            width: 480,
+            height:600,        
         	alignName:true,
         	lateralise:false, 
        		levelsToShow:5,
@@ -51,30 +51,7 @@
                                           ' "rel="' +Taxon[0]+i+ '" ' + 'class="thumbImage1"><id="thumb1"><div class="forward"></div> </id="thumb1"></a>': ' ';
                                 temp.push ( result );
                                 
-                                 // ALA Spatial portal 
-                               //. result = Taxon ? '<a class="thumbImage1" "rel="' + Taxon[0]+i+ '" ' +
-                                //.			' title="' +Taxon[0]+ ' in ALA spatial portal' + 
-                                //.			' id="'+Taxon[0].replace(/\s+/g,'ALA_iMAP')+index + '" ' +
-                                //.			 'class="thumbImage" rel="'+Taxon[0]+index+ '" title="" href="" id="thumb1"></a>' : '';
-                                 //.        temp.push ( result );
-                                
-                                // ALA density map from LSID  
-                               //. result = Taxon ? '<a class="thumbImage1" ' + 
-                                //.		 'rel="' + Taxon[0]+i+ '"'+
-                                //.		  'title="'+Taxon[0]+ " in density map with LSID " +
-                                //.		  ' id= "'+Taxon[0].replace(/\s+/g,'ALA_dMap')+index +
-                                //.		   'class="thumbImage1" rel="'+Taxon[0]+index+'" title="" href="" id="thumb1"></a>' : '';
-                              // temp.push ( result );       
-					//.	$.ajax({
-       				//.		 type: "POST",
-        			//.		 data: "{'prefix':''}",
-        			//.		 url: "http://bie.ala.org.au/ws/guid/Anaspides+Tasmaniae",
-        			//.		 contentType: "application/json; charset=utf-8",
-        			//.		dataType: "json",
-        			//.		success: functionToCallWhenSucceed,
-       				//.		failure: funcitonToCallWhenFailed
-					//.		});
-                                //http://bie.ala.org.au/ws/guid/Anaspides+Tasmaniae
+                         
 								 output.push ( temp );
                                })( i );    
 

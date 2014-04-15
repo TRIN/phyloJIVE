@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Phylojive : integrating
+      phylogenies with online biodiverstiy data sources">
+    <link rel="stylesheet" type="text/css" media="screen"
+      href="stylesheets/stylesheet.css">
+    <title>Phylojive</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner"> <a id="forkme_banner"
+          href="https://github.com/TRIN/phyloJIVE">View on GitHub</a>
+        <h1 id="project_title">charJSON<img alt="darwin sketch"
+            src="images/Darwin_sketch.png" width="120" height="120"
+            align="right"></h1>
+        <h5 id="project_tagline">formal specification<br>
+        </h5>
+        <p align="left"><font color="#ffcccc">&nbsp;.....&nbsp; used
+            by&nbsp; <a href="index.html">phyloJIVE</a>&nbsp; </font><br>
+        </p>
+        <section id="downloads"> <a class="zip_download_link"
+            href="https://github.com/TRIN/phyloJIVE/zipball/master">Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this project as a .zip file</a> <a
+            class="tar_download_link"
+            href="https://github.com/TRIN/phyloJIVE/tarball/master">Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this project as a tar.gz file</a> </section>
+      </header>
+    </div>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2> charJSON in EBNF</h2>
+        <small><small><i><small><small><small><small>CharJSON ::= </small></small></small></small></i><i><br>
+            </i><i><small><small><small><small>begin-CharJSON '{'
+                      ((Taxon ':' CharacterStateList ) ( ',' Taxon ':'
+                      CharacterStateList )*)? '}'</small></small></small></small></i><i><br>
+            </i><i><small><small><small><small>end-CharJSON</small></small></small></small></i><i><br>
+            </i><i><br>
+            </i><i><small><small><small><small>CharacterStateList::= </small></small></small></small></i><i><br>
+            </i><i><small><small><small><small>begin-CharacterStateList
+                      '{' ((Character ':' CharacterState ) ( ','
+                      Character ':' CharacterState )*)? '}'</small></small></small></small></i><i><br>
+            </i><i><small><small><small><small>end-CharacterStateList</small></small></small></small></i><i><br>
+            </i><i><br>
+            </i><i><small><small><small><small>CharacterState::=</small></small></small></small></i><i><br>
+            </i><i><small><small><small><small>&nbsp; booleanArray
+                      /&nbsp; numberArray / stringArray</small></small></small></small></i><i><br>
+            </i><i><br>
+            </i><i><small><small><small><small>booleanArray::= <br>
+                      begin-booleanArray '[' ((boolean ) ( ','&nbsp;
+                      boolean )*)? ']'</small></small></small></small></i><i><br>
+            </i><i><small><small><small><small>end-booleanArray</small></small></small></small></i><i><br>
+            </i><i><br>
+            </i><i><small><small><small><small>numberArray::= <br>
+                      begin-numberArray '[' ((number ) ( ','&nbsp;
+                      number )*)? ']'</small></small></small></small></i><i><br>
+            </i><i><small><small><small><small>end-booleanArray</small></small></small></small></i><i><br>
+            </i><i><br>
+            </i><i><small><small><small><small>StringArray::= <br>
+                      begin-StringArray '[' ((string ) ( ','&nbsp;
+                      string )*)? ']'</small></small></small></small></i><i><br>
+            </i><i><small><small><small><small>end-StringArray</small></small></small></small></i></small></small><br>
+        <h2>Visualized <br>
+        </h2>
+        <p><br>
+        </p>
+        <p style="font-size: 14px; font-weight:bold"><a name="CharJSON">CharJSON:</a></p>
+        <img alt="rail road diagram" src="diagram/CharJSON.png"
+          usemap="#CharJSON.map" width="766" height="96" border="0"><map
+          name="CharJSON.map">
+          <area coords="29,45,151,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#begin-CharJSON"
+            shape="rect" title="begin-CharJSON">
+          <area coords="259,45,317,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#Taxon"
+            shape="rect" title="Taxon">
+          <area coords="381,45,519,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterStateList"
+            shape="rect" title="CharacterStateList">
+          <area coords="627,45,737,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#end-CharJSON"
+            shape="rect" title="end-CharJSON">
+        </map>
+        <p> </p>
+        <div class="ebnf">
+          <pre><a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharJSON" title="CharJSON">CharJSON</a> ::= <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#begin-CharJSON" title="begin-CharJSON">begin-CharJSON</a> '{' ( <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#Taxon" title="Taxon">Taxon</a> ':' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterStateList" title="CharacterStateList">CharacterStateList</a> ( ',' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#Taxon" title="Taxon">Taxon</a> ':' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterStateList" title="CharacterStateList">CharacterStateList</a> )* )? '}' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#end-CharJSON" title="end-CharJSON">end-CharJSON</a></pre>
+        </div>
+        <p>no references</p>
+        <br>
+        <p style="font-size: 14px; font-weight:bold"><a
+            name="CharacterStateList">CharacterStateList:</a></p>
+        <img alt="rail road diagram"
+          src="diagram/CharacterStateList.png"
+          usemap="#CharacterStateList.map" width="880" height="96"
+          border="0"><map name="CharacterStateList.map">
+          <area coords="29,45,207,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#begin-CharacterStateList"
+            shape="rect" title="begin-CharacterStateList">
+          <area coords="315,45,397,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#Character"
+            shape="rect" title="Character">
+          <area coords="461,45,577,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterState"
+            shape="rect" title="CharacterState">
+          <area coords="685,45,851,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#end-CharacterStateList"
+            shape="rect" title="end-CharacterStateList">
+        </map>
+        <p> </p>
+        <div class="ebnf">
+          <pre><a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterStateList" title="CharacterStateList">CharacterStateList</a>
+         ::= <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#begin-CharacterStateList" title="begin-CharacterStateList">begin-CharacterStateList</a> '{' ( <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#Character" title="Character">Character</a> ':' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterState" title="CharacterState">CharacterState</a> ( ',' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#Character" title="Character">Character</a> ':' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterState" title="CharacterState">CharacterState</a> )* )? '}' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#end-CharacterStateList" title="end-CharacterStateList">end-CharacterStateList</a></pre>
+        </div>
+        <p>referenced by: </p>
+        <ul>
+          <li><a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharJSON"
+              title="CharJSON">CharJSON</a></li>
+        </ul>
+        <br>
+        <p style="font-size: 14px; font-weight:bold"><a
+            name="CharacterState">CharacterState:</a></p>
+        <img alt="rail road diagram" src="diagram/CharacterState.png"
+          usemap="#CharacterState.map" width="202" height="124"
+          border="0"><map name="CharacterState.map">
+          <area coords="49,1,153,33"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#booleanArray"
+            shape="rect" title="booleanArray">
+          <area coords="49,45,149,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#numberArray"
+            shape="rect" title="numberArray">
+          <area coords="49,89,137,121"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#stringArray"
+            shape="rect" title="stringArray">
+        </map>
+        <p> </p>
+        <div class="ebnf">
+          <pre><a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterState" title="CharacterState">CharacterState</a>
+         ::= <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#booleanArray" title="booleanArray">booleanArray</a>
+           | <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#numberArray" title="numberArray">numberArray</a>
+           | <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#stringArray" title="stringArray">stringArray</a></pre>
+        </div>
+        <p>referenced by: </p>
+        <ul>
+          <li><a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterStateList"
+              title="CharacterStateList">CharacterStateList</a></li>
+        </ul>
+        <br>
+        <p style="font-size: 14px; font-weight:bold"><a
+            name="booleanArray">booleanArray:</a></p>
+        <img alt="rail road diagram" src="diagram/booleanArray.png"
+          usemap="#booleanArray.map" width="616" height="96" border="0"><map
+          name="booleanArray.map">
+          <area coords="29,45,173,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#begin-booleanArray"
+            shape="rect" title="begin-booleanArray">
+          <area coords="279,45,349,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#boolean"
+            shape="rect" title="boolean">
+          <area coords="455,45,587,77"
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#end-booleanArray"
+            shape="rect" title="end-booleanArray">
+        </map>
+        <p> </p>
+        <div class="ebnf">
+          <pre><a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#booleanArray" title="booleanArray">booleanArray</a>
+         ::= <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#begin-booleanArray" title="begin-booleanArray">begin-booleanArray</a> '[' ( <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#boolean" title="boolean">boolean</a> ( ',' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#boolean" title="boolean">boolean</a> )* )? ']' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#end-booleanArray" title="end-booleanArray">end-booleanArray</a></pre>
+        </div>
+        <p>referenced by: </p>
+        <ul>
+          <li><a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterState"
+              title="CharacterState">CharacterState</a></li>
+        </ul>
+        <br>
+        <p style="font-size: 14px; font-weight:bold"><a
+            name="numberArray">numberArray:</a></p>
+        <img alt="rail road diagram" src="diagram/numberArray.png"
+          usemap="#numberArray.map" width="610" height="96" border="0"><map
+          name="numberArray.map">
+        </map>
+        <p> </p>
+        <div class="ebnf">
+          <pre><a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#numberArray" title="numberArray">numberArray</a>
+         ::= <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#begin-numberArray" title="begin-numberArray">begin-numberArray</a> '[' ( <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#number" title="number">number</a> ( ',' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#number" title="number">number</a> )* )? ']' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#end-booleanArray" title="end-booleanArray">end-booleanArray</a></pre>
+        </div>
+        <p>referenced by: </p>
+        <ul>
+          <li><a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#CharacterState"
+              title="CharacterState">CharacterState</a></li>
+        </ul>
+        <br>
+        <p style="font-size: 14px; font-weight:bold"><a
+            name="StringArray">StringArray:</a></p>
+        <img alt="rail road diagram" src="diagram/StringArray.png"
+          usemap="#StringArray.map" width="574" height="96" border="0"><map
+          name="StringArray.map">
+        </map>
+        <p> </p>
+        <div class="ebnf">
+          <pre><a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#StringArray" title="StringArray">StringArray</a>
+         ::= <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#begin-StringArray" title="begin-StringArray">begin-StringArray</a> '[' ( <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#string" title="string">string</a> ( ',' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#string" title="string">string</a> )* )? ']' <a href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/charJSONFormalSpec.html#end-StringArray" title="end-StringArray">end-StringArray</a></pre>
+        </div>
+        <p>no references</p>
+        ... generated by <a class="signature"
+          href="http://railroad.my28msec.com/"
+          name="Railroad-Diagram-Generator"
+          title="http://railroad.my28msec.com/">Railroad Diagram
+          Generator</a><br>
+        <br>
+        <br>
+      </section>
+    </div>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Phylojive maintained by <a
+            href="https://github.com/TRIN">TRIN</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub
+            Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

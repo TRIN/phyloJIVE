@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Phylojive : integrating
+      phylogenies with online biodiverstiy data sources">
+    <link rel="stylesheet" type="text/css" media="screen"
+      href="stylesheets/stylesheet.css">
+    <title>Phylojive</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner"> <a id="forkme_banner"
+          href="https://github.com/TRIN/phyloJIVE">View on GitHub</a>
+        <h1 id="project_title"><a class="mozTocH1" name="mozTocId637723"></a>parameters
+          <img alt="darwin sketch" src="images/Darwin_sketch.png"
+            width="120" height="120" align="right"></h1>
+        <h2 id="project_tagline"><a class="mozTocH2"
+            name="mozTocId88732"></a>for <a href="index.html"><font
+              color="#ffcccc">phyloJIVE</font></a> <br>
+        </h2>
+        &nbsp; <br>
+        <section id="downloads"> <a class="zip_download_link"
+            href="https://github.com/TRIN/phyloJIVE/zipball/master">Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this project as a .zip fil</a> <a class="tar_download_link"
+            href="https://github.com/TRIN/phyloJIVE/tarball/master">Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this project as a tar.gz file</a> </section>
+      </header>
+    </div>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <ol id="mozToc">
+          <!--mozToc h1 1 h2 2 h3 3 h4 4 h5 5 h6 6-->
+          <li><a href="#mozTocId637723">parameters</a>
+            <ol>
+              <li><a href="#mozTocId177651">params for the phylogeny
+                  explorer web application</a>
+                <ol>
+                  <li><a href="#mozTocId921802">... tree and characters</a></li>
+                </ol>
+              </li>
+              <li><a href="#mozTocId834619">... template for simple name
+                  based data-sources</a>
+                <ol>
+                  <li><a href="#mozTocId992837">.. alternative functions
+                    </a></li>
+                  <li><a href="#mozTocId305207">GUID's (LSIDs)</a></li>
+                </ol>
+              </li>
+            </ol>
+          </li>
+        </ol>
+        <h3><a name="params"></a>params for the phylogeny explorer web
+          application</h3>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+        <table width="100%" cellpadding="2" cellspacing="2">
+          <tbody>
+            <tr>
+              <td valign="top" width="30%">width: 550&nbsp;&nbsp; </td>
+              <td valign="top" width="70%">in pixels</td>
+            </tr>
+            <tr>
+              <td valign="top">height:800&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp; </td>
+              <td valign="top">in pixels</td>
+            </tr>
+            <tr>
+              <td valign="top" width="30%"> alignName:true<br>
+              </td>
+              <td valign="top" width="70%">true or false? are names
+                aligned&nbsp; or adjacent to tips</td>
+            </tr>
+            <tr>
+              <td valign="top"> lateralise:false<br>
+              </td>
+              <td valign="top">true or false? sort the tree by clade
+                branch length</td>
+            </tr>
+            <tr>
+              <td valign="top">levelsToShow:5</td>
+              <td valign="top">how deep to show?<br>
+                Clades deeper than this are collapsed to a small
+                triangle that can be expanded on demand.<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">branchMultiplier:1</td>
+              <td valign="top">multiplier for branches. <br>
+                Useful for very small or very big branch lengths.<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">firstCharacter: 'moisture'</td>
+              <td valign="top">The name of the first character/trait
+                that will appear by default on the tree. The name must
+                also be in the charJSON. <br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">Node: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                height: 40,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                width: 20,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                type: 'circle',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                dim: 5,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                color: '#aaa',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                overridable: true,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                align: 'left'<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+              </td>
+              <td valign="top">configurable attributes of clades (tree
+                nodes)<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Canvas: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                background: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                color: '#EEF2F7'<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                }<br>
+              </td>
+              <td valign="top">configurable attributes of the web
+                application Canvas <br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">&nbsp; Edge: {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                type: 'line',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                color: '#000',<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                overridable: true,<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                lineWidth: 2<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+              </td>
+              <td valign="top">configurable attributes of the lines that
+                make up the phylogenetic tree visualisation<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp; <br>
+        <h4><a class="mozTocH4" name="mozTocId921802"></a><a
+            name="..._tree_and_characters"></a>... tree and characters</h4>
+        <br>
+        <table width="100%" border="1" cellpadding="2" cellspacing="2">
+          <tbody>
+            <tr>
+              <td valign="top" width="50%">tree : 'a newick formatted
+                phylogeny'<br>
+              </td>
+              <td valign="top">A newick formatted tree. <br>
+                Enclosed in single quotes with no "special characters"
+                (double quotes and such like unless they are
+                escaped.&nbsp; <br>
+                ... other tree formats are possible but not yet<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top" width="50%">character: charJSONcharacters<br>
+              </td>
+              <td valign="top">see <a href="about_charJSON.html">about
+                  charJSON</a><br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3><a class="mozTocH3" name="mozTocId834619"></a>... <a
+            name="template"></a>template for simple name based
+          data-sources</h3>
+        <p>It may look daunting but the tmpl&nbsp; variable provides a
+          simple way to include data resouces which provide taxon name
+          based searches.<br>
+        </p>
+        <p>There is no standard form of call for the biodiversity web
+          services. This template is suited for those that return
+          results that can be displayed without parsing by browsers.<br>
+        </p>
+        <p>Some biodiversity web services return json and xml, in which
+          case, the result needs to be parsed before it can be
+          displayed.&nbsp; The functions presentClade, onPresentClade,
+          and Tips can be respecified to achieve this.&nbsp; The <a
+            href="getting_started.html">getting started with phyloJIVE </a>lists
+          some examples.<br>
+        </p>
+        <p>It is essentially a html table that is expanded as required
+          to add the taxon names.</p>
+        <table width="100%" border="1" cellpadding="2" cellspacing="2">
+          <tbody>
+            <tr>
+              <td valign="top"><font size="-1">tmpl :<br>
+                </font></td>
+              <td valign="top" width="80"><font size="-1">the name of
+                  the template<br>
+                </font></td>
+            </tr>
+            <tr>
+              <td valign="top"><font size="-1">'&lt;table style="border:
+                  none"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;links&lt;/th&gt;&lt;th&gt;
+                  &lt;/th&gt;&lt;th&gt; &lt;/th&gt;&lt;th&gt;
+                  &lt;/th&gt;&lt;th&gt; &lt;/th&gt;&lt;/tr&gt;' + <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  '&lt;% _.each(nodeList , function( value ) {' +<br>
+                </font></td>
+              <td valign="top" width="80"><font size="-1">the header row<br>
+                </font></td>
+            </tr>
+            <tr>
+              <td valign="top"><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp; '&lt;td&gt;&lt;a href="</font><font
+                  size="-1"><font color="#9999ff"><font size="-1"><font
+                        color="#9999ff">http://</font></font>THE_First_Resource/</font>&lt;%=
+                  <font color="#9999ff">value.name </font>%&gt;"
+                  title="&lt;%= <font color="#9999ff">value.name </font>%&gt;
+                  <font color="#ff6666">some descriptive text for the
+                    tool tip</font>" rel="&lt;%= value.rel %&gt;"
+                  class="thumbImage1"&gt;&lt;%= <font color="#9999ff">value.name</font>
+                  %&gt;&lt;/a&gt;&lt;/td&gt;' + <br>
+                  <br>
+                </font></td>
+              <td valign="top"><font size="-1">link to the resource
+                  in&nbsp; first column which includes the name of the
+                  taxon<br>
+                </font></td>
+            </tr>
+            <tr>
+              <td valign="top"><font size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; '&lt;td&gt;&lt;a
+                  href="<font color="#9999ff">http://Another_Resource/</font>&lt;%=
+                  <font color="#9999ff">value.name</font> %&gt;" title="<font
+                    color="#ff6666">about</font> &lt;%= <font
+                    color="#9999ff">value.name</font>%&gt; </font><font
+                  size="-1"><font size="-1"><font color="#ff6666">some
+                      descriptive text for the tool tip</font></font>"
+                  rel="&lt;%= value.rel %&gt;"
+                  class="thumbImage1"&gt;&lt;id="thumb1"&gt;&lt;div
+                  class="forward"&gt;&lt;/div&gt;
+                  &lt;/id="thumb1"&gt;&lt;/a&gt;&lt;/td&gt;' + <br>
+                  &nbsp; <br>
+                </font></td>
+              <td valign="top"><font size="-1">a resource&nbsp; which
+                  requires a full name. link is shown as an icon<br>
+                </font></td>
+            </tr>
+            <tr>
+              <td valign="top"><font size="-1">'&lt;td&gt;&lt;a href="</font><font
+                  size="-1"><font size="-1"><font color="#9999ff">http://Another_Resource/</font></font>&lt;%=
+                  <font color="#3366ff">value.genus</font> %&gt;+&lt;%=<font
+                    color="#3366ff"> value.species</font> %&gt;" title="</font><font
+                  size="-1"><font size="-1"><font size="-1"><font
+                        color="#ff6666">some descriptive text for the
+                        tool tip</font></font></font> on &lt;%= <font
+                    color="#3366ff">value.name</font> %&gt;" rel="&lt;%=
+                  value.rel %&gt;"
+                  class="thumbImage1"&gt;&lt;id="thumb1"&gt;&lt;div
+                  class="forward"&gt;&lt;/div&gt;
+                  &lt;/id="thumb1"&gt;&lt;/a&gt;' + </font><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; <br>
+              </td>
+              <td valign="top"><font size="-1">a resource which requires
+                  a genus and species separately. link is shown as an
+                  icon</font></td>
+            </tr>
+            <tr>
+              <td valign="top"><font size="-1">'%&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;'
+                </font><br>
+              </td>
+              <td valign="top">closing<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p><br>
+          Here is an example which includes links to <br>
+        </p>
+        <ul>
+          <li>DiscoverLife, </li>
+          <li>The Encylopedia of Life, </li>
+          <li>The Australian Faunal Directory, </li>
+          <li>Atlas of Living Australia Species page, </li>
+          <li>The National Species List Nomenclator,&nbsp;&nbsp; </li>
+          <li>and maps of taxon density and occurence from the Atlas of
+            Living Australia.&nbsp; &nbsp;&nbsp;&nbsp; </li>
+        </ul>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          <font size="-2">tmpl :&nbsp; '&lt;table style="border:
+            none"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;links&lt;/th&gt;&lt;th&gt;
+            &lt;/th&gt;&lt;th&gt; &lt;/th&gt;&lt;th&gt;
+            &lt;/th&gt;&lt;th&gt; &lt;/th&gt;&lt;/tr&gt;' + <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            '&lt;% _.each(nodeList , function( value ) {' +<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ' %&gt; &lt;tr&gt;'+ <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; '&lt;td&gt;&lt;a
+            href="http://www.environment.gov.au/biodiversity/abrs/online-resources/fauna/afd/taxa/&lt;%=
+            value.name %&gt;" title="&lt;%= value.name %&gt; in the AFD"
+            rel="&lt;%= value.rel %&gt;" class="thumbImage1"&gt;&lt;%=
+            value.name %&gt;&lt;/a&gt;&lt;/td&gt;' + <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; '&lt;td&gt;&lt;a
+            href="http://bie.ala.org.au/species/&lt;%= value.name %&gt;"
+            title="about &lt;%= value.name %&gt; ALA species page "
+            rel="&lt;%= value.rel %&gt;"
+            class="thumbImage1"&gt;&lt;id="thumb1"&gt;&lt;div
+            class="forward"&gt;&lt;/div&gt;
+            &lt;/id="thumb1"&gt;&lt;/a&gt;&lt;/td&gt;' + <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; '&lt;td&gt;&lt;a
+            href="http://biodiversity.org.au/name/&lt;%= value.name
+            %&gt;" title="about &lt;%= value.name %&gt; in NSL
+            nomenclator " rel="&lt;%= value.rel %&gt;"
+            class="thumbImage1"&gt;&lt;id="thumb1"&gt;&lt;div
+            class="forward"&gt;&lt;/div&gt;
+            &lt;/id="thumb1"&gt;&lt;/a&gt;&lt;/td&gt;' + <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; '&lt;td&gt;&lt;a
+            href="http://www.discoverlife.org/mp/20q?search=&lt;%=
+            value.name %&gt;+&lt;%= value.species %&gt;" title="images
+            and info from Discover Life on &lt;%= value.name %&gt;"
+            rel="&lt;%= value.rel %&gt;"
+            class="thumbImage1"&gt;&lt;id="thumb1"&gt;&lt;div
+            class="forward"&gt;&lt;/div&gt;
+            &lt;/id="thumb1"&gt;&lt;/a&gt;' + <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; '&lt;td&gt;&lt;a
+            href="http://biocache.ala.org.au/ws/density/map?q=&lt;%=
+            value.name %&gt;" title="&lt;%= value.name %&gt; Aus density
+            Map (if sufficient samples)" rel="&lt;%= value.rel %&gt;"
+            class="thumbImage1"&gt;&lt;id="thumb1"&gt;&lt;div
+            class="forward"&gt;&lt;/div&gt;&lt;/id="thumb1"&gt;&lt;/a&gt;&lt;/td&gt;&lt;/td&gt;'
+            +<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; '&lt;td&gt;&lt;a
+            href="http://eol.org/search/show?q=&lt;%= value.name
+            %&gt;&amp;amp;type[]=taxon_concept&amp;amp;type[]=image&amp;amp;commit=Filter"
+            title="images of &lt;%= value.name %&gt; in EOL" rel="&lt;%=
+            value.rel %&gt;"
+            class="thumbImage1"&gt;&lt;id="thumb1"&gt;&lt;div
+            class="forward"&gt;&lt;/div&gt;
+            &lt;/id="thumb1"&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;%
+            }); ' + <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            '%&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;'&nbsp;&nbsp;
+          </font></p>
+        <h4><a class="mozTocH4" name="mozTocId992837"></a><a
+            name=".._alternative_functions"></a>.. alternative functions<br>
+        </h4>
+        <p>Alternative functions which&nbsp; define actions on hover and
+          click on nodes and clades</p>
+        <p>&nbsp;presentClade to replace&nbsp; underscores with spaces
+          in taxon names<br>
+        </p>
+        <p><br>
+          <font color="#6600cc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            presentClade: function (clade) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            var tmpl = st.config.tmpl,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            nodeList = [],<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            node, html, split;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            for (var i = 0; ((i &lt; clade.length) &amp; (i &lt; 30));
+            i++) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            node = {}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            node.name = clade [ i ].name;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            node.plus = clade [ i ].name.replace(/\s+/g,'+');<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            split = node.name.split( /\s+/ );<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            if ( split.length &gt; 1 ){<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            node.genus = split [ 0 ];<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            node.species = split [ 1
+            ];&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            } else {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            node.species = split [ 0 ];<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            node.rel = node.species + '' + i;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            node.index = i;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            nodeList.push ( node
+            );&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            if ( tmpl ) {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            tmpl = _.template ( tmpl );<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            html = tmpl ( {nodeList: nodeList});<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            } else {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            return html;<br>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            }, //presentClade </font><br>
+          <br>
+        </p>
+        <p></p>
+        <h4><a class="mozTocH4" name="mozTocId305207"></a><a
+            name="GUIDs_LSIDs"></a>GUID's (LSIDs)</h4>
+        <p>An example where GUIDs are used (<a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20*PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/hornwortsPlus.html">Hornworts</a>
+          plus LSIDs). Taxon names are looked up with a nomenclator
+          then&nbsp; translated to the equivalent <a
+            href="http://en.wikipedia.org/wiki/LSID">LSID</a>. <br>
+        </p>
+        <p>Strictly speaking any GUID's should be supplied with the
+          phylogeny Or the creator of the phylogeny should explicitly
+          state that they are using the&nbsp; taxon concepts as recorded
+          in a particular source at a particular time. However, such
+          perfection is rarely attainable. This template is provided as
+          a proof of concept.<br>
+        </p>
+        <br>
+      </section>
+    </div>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Phylojive maintained by <a
+            href="https://github.com/TRIN">TRIN</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub
+            Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

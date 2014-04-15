@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Phylojive : integrating
+      phylogenies with online biodiverstiy data sources">
+    <link rel="stylesheet" type="text/css" media="screen"
+      href="stylesheets/stylesheet.css">
+    <title>Phylojive</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner"> <a id="forkme_banner"
+          href="https://github.com/TRIN/phyloJIVE">View on GitHub</a>
+        <h1 id="project_title">getting started <img alt="darwin sketch"
+            src="images/Darwin_sketch.png" height="120" width="120"
+            align="right"></h1>
+        <h2 id="project_tagline">with <a href="index.html"><font
+              color="#ffcccc">phyloJIVE</font></a> and your own data<br>
+        </h2>
+        <p><br>
+        </p>
+        <p align="right"><font color="#ffff00">&nbsp;&nbsp;<font
+              color="#ff99ff"> <font color="#ffcc66"><font
+                  color="#ffff99"><a href="http://trin.github.io/jit/"><font
+                      color="#ffff99"><font color="#ccccff">for
+                        developers, </font></font></a></font>&nbsp;</font>
+            </font><a href="https://github.com/TRIN/phyloJIVE/wiki"><font
+                color="#ff99ff">wiki instructions + known problems,</font></a>
+            &nbsp; <a
+              href="https://github.com/TRIN/phyloJIVE/zipball/master"><font
+                color="#ffff00">download phyloJIVE</font></a></font><font
+            color="#ffff00">&nbsp;</font>&nbsp; <br>
+        </p>
+        <section id="downloads"> <a class="zip_download_link"
+            href="https://github.com/TRIN/phyloJIVE/zipball/master">Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this project as a .zip file</a> <a
+            class="tar_download_link"
+            href="https://github.com/TRIN/phyloJIVE/tarball/master">Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this project as a tar.gz file</a> </section>
+      </header>
+    </div>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>Quick Start Template... for the impatient</h3>
+        This <a href="SimpleTemplate_webApp.html">simple template</a>
+        provides a minimal set of features.&nbsp; The file structure in
+        the folder containing this template can be used to set-up your
+        own&nbsp; instance of PhyloJIVE on your desktop or embedded in a
+        webpage.&nbsp; For more details, see the phyloJIVE web
+        application parameters <a href="phyloJIVEparameters.html">page</a>.<br>
+        <br>
+        There are two ways to change the data. &nbsp;<br>
+        <br>
+        <ol>
+          <li>First you can click the ipad-like button at the top, click
+            on the Input tab and paste a newick tree in the box and
+            clickon Render.&nbsp; You cannot input trait data with this
+            method.<br>
+            <br>
+          </li>
+          <li>The second way utilizes the file structure.</li>
+          <ol>
+            <li>&nbsp; Parameters, trees and characters can be altered
+              by editing SimpleParams_PhyloJIVE.js Open <a
+                href="trees_characters/SimpleParams_PhyloJIVE.js">SimpleParams_PhyloJIVE.js</a>
+              in the trees_character folder.&nbsp;&nbsp; This file
+              contains the data that you can view on the right of this
+              screen, i.e. the tree and character data.&nbsp; <br>
+              There is also a blank <a
+                href="trees_characters/template.js">template.js</a>.</li>
+            <li>Simply paste the new tree over the old making sure
+              the&nbsp; punctuation is maintained.&nbsp;&nbsp; Should a
+              large newick tree fail to display then the first thing to
+              check for is escape characters such as quotes for informal
+              names or unnamed specimens.<br>
+              The character trait data can be updated by first
+              converting a csv file to charJson by using the supplied <a
+                href="about_charJSON.html">converter</a>.&nbsp; <br>
+            </li>
+            <li>Then paste the&nbsp; charJSON formatted character data
+              over the data in <a
+                href="trees_characters/SimpleParams_PhyloJIVE.js">SimpleParams_PhyloJIVE.js</a>.&nbsp;
+
+
+
+
+
+              located in the trees_characters <a
+                href="trees_characters">folder</a><br>
+              Character sets can be either qualitative or quantitative
+              or a mix of both types.</li>
+          </ol>
+        </ol>
+        <h3>Customisation</h3>
+        <p>If you wish a more appropriate name for the file which
+          contains trees and characters or you have more than one tree.
+          You simply need to edit the html file to replace the reference
+          to <a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/trees_characters/SimpleParams_PhyloJIVE.js">SimpleParams_PhyloJIVE.js</a>.
+          A text view of the html file is shown <a
+            href="images/Changing_tree_jsFile.png">here</a>. <br>
+        </p>
+        <img alt="what to change if you want to rename to file containg
+          trees and chars" title="what to change if you want to rename
+          to file containg trees and chars"
+          src="images/Changing_tree_jsFile.png" height="393" width="960">
+        <h4>Changing external links - using templates&lt;&lt;&lt;
+          Reccomended<br>
+        </h4>
+        <p>Two examples of how to change the external links using the
+          link template<br>
+          <a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/Australian_bird3365.html">Australian
+            extent endemic birds</a> and <a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/Amphibia%20T48025.html">Amphibia</a>.&nbsp;
+
+          Details of the syntax are on the <a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/phyloJIVEparameters#template">parameter
+            page</a>.</p>
+        <p>Punctuation (syntax) is important. Commas, brackets and
+          braces must match. They should remain unchanged.<img alt="an
+            example of a templated list" title="an example of a
+            templated list" src="images/templated%20linked%20list.png"
+            height="234" width="1153"></p>
+        <h4><br>
+        </h4>
+        <h4>Changing external links- over riding the presentClade
+          function &lt;&lt;&lt; The hard way<br>
+        </h4>
+        <p>More exquisite control can be achieved if you over ride the
+          presentClade function. This is done by including a new
+          definition of it on initialization as seen in <a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/syncarida.html">Syncarida
+            .</a><br>
+          <img alt="an example of how to override the presentClade
+            function" title="an example of how to override the
+            presentClade function" src="images/presentClade.png"
+            height="1047" width="1081"><br>
+        </p>
+        <h4>Changing what appears on hover (the tips function)<br>
+        </h4>
+        <p>&nbsp;<br>
+          &nbsp; <a href="syncarida.html">Syncarida&nbsp;</a> shows how
+          to change what appears as the mouse hovers over a taxon or
+          clade. <br>
+        </p>
+        <p> You&nbsp; need to override the tips function. <br>
+          This is done by creating a new one which&nbsp; is saved with
+          the tree and other initialization variables.&nbsp; <br>
+        </p>
+        <img alt="A screen grab showing how to override the tips
+          function" title="A screen grab showing how to override the
+          tips function" src="images/tipsFn.png" height="794"
+          width="1022">
+        <h4>&nbsp;GUID's (LSIDs)&nbsp; <br>
+        </h4>
+        <p>An example where GUIDs are used (<a
+href="file:///Volumes/Text/Documents-working/3%20Current%20Projects/3%20PhyloJIVE/3.pj.%20Current%20Projects/WebApp/git/phyloJIVE/syncarida.html">Syncarida</a>
+          plus LSIDs). Taxon names are looked up with a nomenclator
+          then&nbsp; translated to the equivalent <a
+            href="http://en.wikipedia.org/wiki/LSID">LSID</a>. <br>
+        </p>
+        Strictly speaking any GUID's should be supplied with the
+        phylogeny Or the creator of the phylogeny should explicitly
+        state that they are using the&nbsp; taxon concepts as recorded
+        in a particular source at a particular time. However, such
+        perfection is rarely attainable. This template is provided as a
+        proof of concept.
+        <p> </p>
+        <br>
+        <p></p>
+        <br>
+      </section>
+    </div>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Phylojive maintained by <a
+            href="https://github.com/TRIN">TRIN</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub
+            Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

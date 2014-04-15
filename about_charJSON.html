@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Phylojive : integrating
+      phylogenies with online biodiverstiy data sources">
+    <link rel="stylesheet" type="text/css" media="screen"
+      href="stylesheets/stylesheet.css">
+    <title>Phylojive</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner"> <a id="forkme_banner"
+          href="https://github.com/TRIN/phyloJIVE">View on GitHub</a>
+        <h1 id="project_title">about charJSON<img alt="darwin sketch"
+            src="images/Darwin_sketch.png" width="120" height="120"
+            align="right"></h1>
+        <h5 id="project_tagline">and how to create it</h5>
+        <p align="left"><font color="#ffcccc">&nbsp;.....&nbsp; used
+            by&nbsp; <a href="index.html">phyloJIVE</a>&nbsp; </font><br>
+        </p>
+        <section id="downloads"> <a class="zip_download_link"
+            href="https://github.com/TRIN/phyloJIVE/zipball/master">Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this project as a .zip file</a> <a
+            class="tar_download_link"
+            href="https://github.com/TRIN/phyloJIVE/tarball/master">Download
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            this project as a tar.gz file</a> </section>
+      </header>
+    </div>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>About charJSON</h2>
+        <p>charJSON is a JSON data structure for representing
+          qualitative and quantitative traits/characters. It can&nbsp;
+          be parsed by most programming languages. <a
+            href="charJSONFormalSpec.html">Here</a> is&nbsp; a formal
+          description of charJSON in Extended Backus-Naur Form&nbsp;
+          (EBNF).<br>
+        </p>
+        <p>charJSON is designed to be portable. It lacks the rigour of
+          delta and LUCID matrices which it is NOT designed to replace.
+          It requires no implicit code or assumptions. It is not
+          designed to create keys nor to help code them. Rather, just as
+          a light weight means to transport trait information. <br>
+        </p>
+        <p>Here we provide scripts which can transform csv tables of
+          trait information (produced by lucid, delta, excel, or
+          mesquite) into charJSON. <br>
+        </p>
+        <h2><a name="Instructions_and_test_cases"></a>Instructions and
+          test cases</h2>
+        &nbsp;Here are scripts for <a
+          href="charJSON%20converstion%20scripts/csv2json.awk">windows</a>
+        and <a
+          href="charJSON%20converstion%20scripts/unix_csv2json.awk">unix/linux/mac</a>
+        that will convert a csv file to charJSON.<br>
+        <br>
+        The original File must<br>
+        <ol>
+          <li>&nbsp; have column names in the first row for EVERY value
+            including the first column</li>
+          <li>&nbsp; have species or taxon names in the first column</li>
+        </ol>
+        It can have<br>
+        <ol>
+          <li>&nbsp; numeric, strings, or boolean values</li>
+          <li>&nbsp; multiple character states, each separated by ||
+            i.e. two pipe characters</li>
+        </ol>
+        awk or gnuawk can be used.<br>
+        &nbsp; * for windows&nbsp; you will need to install something
+        like <a
+          href="http://gnuwin32.sourceforge.net/packages/gawk.htm">gawk</a>
+        <br>
+        &nbsp; * no software is required for macs (OS X) or linux <br>
+        <br>
+        to use the script open a command window or terminal<br>
+        get to the folder/directory in which you wish to work<br>
+        type a command as follows<br>
+        <blockquote>awk -F "," -f csv2json.awk YOUR_INPUTFILE &gt;&gt;
+          YOURDESIRED_outputfile.json<br>
+          &nbsp;&nbsp; &nbsp;e.g. <br>
+          awk -F "," -f csv2json.awk hornwort.csv &gt;&gt;
+          hornwarts.json<br>
+        </blockquote>
+        <h3>Example 1<br>
+        </h3>
+        awk -F "," -f csv2json.awk acacia.txt &gt;&gt; acacia.json<br>
+        <h5><b>takes ....</b></h5>
+        <blockquote>&nbsp;<br>
+          "scientificName","seed mass","Inflorescence colour","plant
+          height","Phyllode length median","Inflorescence
+          arrangement","Stipule length median","Inflorescence shape","
+          leaflet pairs 2nd leaf","range size","genome size","Phyllode
+          arrangement","Pulvinus length median","first leaf pinnae
+          pairs","section taxonomy"<br>
+          "Acacia
+diphylla","5.4","unknown","","","unknown","","unknown","1.9","","","unknown","","2.0","unknown"<br>
+          Acacia courtii,"","white to cream||pale
+yellow","20","115","simple","0.25","cylindrical","","2","","scattered","","","juliflorae"<br>
+        </blockquote>
+        <h5>makes ....</h5>
+        <blockquote>{<br>
+          "Acacia diphylla" : {<br>
+          &nbsp;&nbsp; &nbsp;"seed mass" : [ 5.4] ,<br>
+          &nbsp;&nbsp; &nbsp;"Inflorescence colour" : [ "unknown"] ,<br>
+          &nbsp;&nbsp; &nbsp;"plant height" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"Phyllode length median" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"Inflorescence arrangement" : [ "unknown"]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"Stipule length median" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"Inflorescence shape" : [ "unknown"] ,<br>
+          &nbsp;&nbsp; &nbsp;" leaflet pairs 2nd leaf" : [ 1.9] ,<br>
+          &nbsp;&nbsp; &nbsp;"range size" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"genome size" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"Phyllode arrangement" : [ "unknown"] ,<br>
+          &nbsp;&nbsp; &nbsp;"Pulvinus length median" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"first leaf pinnae pairs" : [ 2.0] ,<br>
+          &nbsp;&nbsp; &nbsp;"section taxonomy" : [ "unknown"]&nbsp; }<br>
+          ,<br>
+          "Acacia courtii" : {<br>
+          &nbsp;&nbsp; &nbsp;"seed mass" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"Inflorescence colour" : [ "white to
+          cream", "pale yellow"] ,<br>
+          &nbsp;&nbsp; &nbsp;"plant height" : [ 20] ,<br>
+          &nbsp;&nbsp; &nbsp;"Phyllode length median" : [ 115] ,<br>
+          &nbsp;&nbsp; &nbsp;"Inflorescence arrangement" : [ "simple"] ,<br>
+          &nbsp;&nbsp; &nbsp;"Stipule length median" : [ 0.25] ,<br>
+          &nbsp;&nbsp; &nbsp;"Inflorescence shape" : [ "cylindrical"] ,<br>
+          &nbsp;&nbsp; &nbsp;" leaflet pairs 2nd leaf" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"range size" : [ 2] ,<br>
+          &nbsp;&nbsp; &nbsp;"genome size" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"Phyllode arrangement" : [ "scattered"] ,<br>
+          &nbsp;&nbsp; &nbsp;"Pulvinus length median" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"first leaf pinnae pairs" : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"section taxonomy" : [ "juliflorae"]&nbsp;
+          }<br>
+          }<br>
+        </blockquote>
+        <br>
+        <h3>Example 2</h3>
+        awk -F "," -f csv2json.awk hornwort.csv &gt;&gt; hornwarts.json<br>
+        <h5>takes...</h5>
+        <blockquote>taxon,raw max temp warmest period,modelled max temp
+          warmest period,raw precipitation driest&nbsp; quarter,modelled
+          precipitation driest quarter,raw mean temp driest
+          quater,modelled_mean_temp_driest_quater,raw thpk 1 1000 g
+          thickness,modelled thpk 1 1000 g thickness<br>
+          Dendroceros subgenus
+          apoceros,28,28.64999962,252.3333333,247,19,19.40000057,150,150<br>
+Dendroceros_subgenus_dendroceros,27.44444444,28.05257573,169.1666667,167.2409091,15.88888889,16.75318181,272.0555556,301.3257576<br>
+Megaceros_flagellaris,27.42857143,28.58099998,171.4285714,170.66,16,17.44700016,253.4285714,226.16<br>
+Megaceros_gracilis,23.28333333,23.58369219,212.0583333,212.48,11.83333333,12.2307692,279.0416667,278.2092308<br>
+Megaceros_pellucidus,18.09090909,18.35666676,264.1818182,267.1666667,11.90909091,12.20333341,308.6363636,322.6333333<br>
+          Anthoceros
+          fragilis,30,30.19999981,55,61,18.75,18.89999962,285.25,295.5<br>
+          Anthoceros
+          laminiferus,27,27.79999924,211,211,16,16.10000038,599,599<br>
+Anthoceros_punctatus,30,28.08274507,61,143.051634,18.5,15.41660129,295.5,292.8313725<br>
+          Folioceros
+          fuciformis,28.5,29.2249999,157.75,157.75,18.75,19.04999971,195.25,195.25<br>
+          Notothylas javanicus,38,38.5,0,0,22.5,23.25,150,150<br>
+          Phaeoceros
+          engelii,25.16666667,,84.16666667,,18.16666667,,597.3333333,<br>
+          Phaeoceros evanidus,28,28.25,135.6,144.5,14.2,13.875,227.8,219<br>
+          Phaeoceros
+tuberosus,31.66666667,33.15000057,33.16666667,28.75,21.16666667,21.64999962,315.8333333,277.75<br>
+          Phaeoceros_carolinianus
+,25.828125,27.29704755,157.328125,158.4253968,13.1875,14.16438104,267.40625,276.8314286<br>
+Phaeoceros_inflatus,23.51428571,25.36589483||23,149.8,158.1031579,14.34285714,15.77442107,256.2285714,270.7410526<br>
+        </blockquote>
+        <h5>makes..... </h5>
+        <blockquote>{<br>
+          "Dendroceros subgenus apoceros" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [ 28]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 28.64999962] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 252.3333333] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 247] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [ 19]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 19.40000057] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          150] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 150]&nbsp; }<br>
+          ,<br>
+          "Dendroceros_subgenus_dendroceros" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [
+          27.44444444] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 28.05257573] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 169.1666667] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 167.2409091] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          15.88888889] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 16.75318181] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          272.0555556] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 301.3257576]&nbsp; }<br>
+          ,<br>
+          "Megaceros_flagellaris" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [
+          27.42857143] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 28.58099998] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 171.4285714] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 170.66] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [ 16]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 17.44700016] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          253.4285714] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 226.16]&nbsp; }<br>
+          ,<br>
+          "Megaceros_gracilis" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [
+          23.28333333] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 23.58369219] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 212.0583333] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 212.48] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          11.83333333] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 12.2307692] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          279.0416667] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 278.2092308]&nbsp; }<br>
+          ,<br>
+          "Megaceros_pellucidus" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [
+          18.09090909] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 18.35666676] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 264.1818182] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 267.1666667] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          11.90909091] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 12.20333341] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          308.6363636] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 322.6333333]&nbsp; }<br>
+          ,<br>
+          "Anthoceros fragilis" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [ 30]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 30.19999981] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 55] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 61] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          18.75] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 18.89999962] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          285.25] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 295.5]&nbsp; }<br>
+          ,<br>
+          "Anthoceros laminiferus" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [ 27]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 27.79999924] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 211] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 211] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [ 16]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 16.10000038] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          599] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 599]&nbsp; }<br>
+          ,<br>
+          "Anthoceros_punctatus" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [ 30]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 28.08274507] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 61] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 143.051634] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          18.5] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 15.41660129] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          295.5] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 292.8313725]&nbsp; }<br>
+          ,<br>
+          "Folioceros fuciformis" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [
+          28.5] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 29.2249999] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 157.75] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 157.75] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          18.75] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 19.04999971] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          195.25] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 195.25]&nbsp; }<br>
+          ,<br>
+          "Notothylas javanicus" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [ 38]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 38.5] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 0] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 0] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          22.5] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 23.25] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          150] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 150]&nbsp; }<br>
+          ,<br>
+          "Phaeoceros engelii" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [
+          25.16666667] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 84.16666667] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          18.16666667] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ ] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          597.3333333] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ ]&nbsp; }<br>
+          ,<br>
+          "Phaeoceros evanidus" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [ 28]
+          ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 28.25] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 135.6] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 144.5] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          14.2] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 13.875] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          227.8] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 219]&nbsp; }<br>
+          ,<br>
+          "Phaeoceros tuberosus" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [
+          31.66666667] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 33.15000057] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 33.16666667] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 28.75] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          21.16666667] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 21.64999962] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          315.8333333] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 277.75]&nbsp; }<br>
+          ,<br>
+          "Phaeoceros_carolinianus " : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [
+          25.828125] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 27.29704755] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 157.328125] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 158.4253968] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          13.1875] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 14.16438104] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          267.40625] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 276.8314286]&nbsp; }<br>
+          ,<br>
+          "Phaeoceros_inflatus" : {<br>
+          &nbsp;&nbsp; &nbsp;"raw max temp warmest period"&nbsp; : [
+          23.51428571] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled max temp warmest period"&nbsp; :
+          [ 25.36589483, 23] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw precipitation driest&nbsp;
+          quarter"&nbsp; : [ 149.8] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled precipitation driest
+          quarter"&nbsp; : [ 158.1031579] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw mean temp driest quater"&nbsp; : [
+          14.34285714] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled_mean_temp_driest_quater"&nbsp; :
+          [ 15.77442107] ,<br>
+          &nbsp;&nbsp; &nbsp;"raw thpk 1 1000 g thickness"&nbsp; : [
+          256.2285714] ,<br>
+          &nbsp;&nbsp; &nbsp;"modelled thpk 1 1000 g thickness"&nbsp; :
+          [ 270.7410526]&nbsp; }<br>
+          }</blockquote>
+      </section>
+    </div>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Phylojive maintained by <a
+            href="https://github.com/TRIN">TRIN</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub
+            Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

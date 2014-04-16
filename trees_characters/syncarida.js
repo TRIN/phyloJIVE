@@ -9,9 +9,12 @@
        		levelsToShow:5,
         	branchMultiplier:0.5,
             presentClade: function (clade) {
-              var tmpl = st.config.tmpl, nodeList = [], node,  split;
+            var tmpl = st.config.tmpl, nodeList = [], node,  split, SpatialPortal;
+  
               var html = '', names = [], formattedNames = [], output = [], header = [' ','links',' ',' ', ' ', ' '], temp, link;
+              
               output.push ( header );
+				  
                 for (var i = 0; ((i < clade.length) & (i < 30)); i++) {
              		  (function  ( index ) {
                                  var node = clade[i], sampleid, result, rel, LSID, genus,  species, genus_plus_species;
@@ -66,8 +69,22 @@
                     for ( i = 1; i < output.length ; i++ ) {
                                result += '<tr><td>' + output[i].join ( '</td><td>' ) + '</td></tr>';
                              }
-                return '<table>'+result+'</table>';
-
+                // send taxa to the ALA spatial portal           
+                SpatialPortal = '<a  title="ALA page" href="http://spatial.ala.org.au/?';
+    
+                var Colours= new Array( "0x109618","0x316395","0x329262","0x651067","0x990099","0x994499","0x3366CC",
+										"0xDC3912","0xFF9900","0x0099C6","0xDD4477","0x66AA00","0xB82E2E","0x22AA99","0x6633CC","0x8B0707","0x5574A6","0x3B3EAC","0xB77322","0x16D620","0xB91383","0xF43595","0x9C5935");
+			 for (var j = 0; ((j < clade.length) & (j < 15)); j++) 
+			 	  { var nd = clade[j];
+			 	    var Tx = nd.name; 
+			 	    var ix = j + 1;
+			 	  if (j > 0) { SpatialPortal = SpatialPortal + "&"; }; 
+			 	  SpatialPortal = SpatialPortal + 'ly.'+ ix + '=' + Tx + '&ly.' + ix +'.s=' + Colours[j] + '&ly.' + ix + '.q=' + Tx;
+			 	  };
+			SpatialPortal = SpatialPortal + '">view in ALA Spatial portal</a>';
+       
+                return '<table>'+result+'</table>' + '>>' + SpatialPortal + '<<';
+                
             }, //presentClade 
             
             onPresentClade:function ( ) {

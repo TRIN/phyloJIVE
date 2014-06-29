@@ -1,8 +1,18 @@
 /*@import url("base.css");*/
-@import url('colorbox/example1/colorbox.css');
-@import url('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
+/*@import url('colorbox/colorbox.css');*/
+/*@import url('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');*/
+@import url('ala-theme/jquery-ui-1.8.23.custom.css');
 @import url('http://code.jquery.com/qunit/qunit-git.css');
 
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+#page-header h1 {
+    margin-top: 10px;
+    font-size: 2.5em;
+}
 /*TOOLTIPS*/
 .tip {
     color: #111;
@@ -27,6 +37,10 @@
   height: auto;
   padding-top:5px;
 }
+.tipImage{
+    max-width: 300px;
+    margin-left: -10px;
+}
 /* added by temi, white background for canvas */
 #infovis-canvas{
 /*   background-color:#F4EDE9; */
@@ -42,13 +56,13 @@ background-color:#EEF2F7;
   width: 10px;
   height: 10px;
   margin-left:2px;
-  background-image: url('transparentSquare.png');
+  background-image: url('../images/Extras/Phylojive/transparentSquare.png');
 }
 .star {
   width: 10px;
   height: 10px;
   margin-left:2px;
-  background-image: url('transparentStar.png');
+  background-image: url('../images/Extras/Phylojive/transparentStar.png');
 }
 .quant {
   width: 10px;
@@ -76,12 +90,12 @@ background-color:#EEF2F7;
 }
 .roundedCorner {
   background-color: #464646;
-  -moz-border-radius: 20px 20px 20px 20px;
-  border-radius: 20px 20px 20px 20px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
 /*   padding: 20px; */
 }
 .forward {
-  background:url('linkout.png') no-repeat;
+  background:url('../images/Extras/Phylojive/linkout.png') no-repeat;
   background-position:center;
   height: 16px;
   width: 16px;
@@ -91,7 +105,7 @@ background-color:#EEF2F7;
   
 }
 /*.forward:hover {
-  background:url('resources/linkout.png') no-repeat;
+  background:url('../../Extras/Phylojive/linkout.png') no-repeat;
   height: 16px;
   width: 16px;
   cursor:pointer;
@@ -101,8 +115,9 @@ background-color:#EEF2F7;
 /*   margin-top:10px; */
 }
 #jitmenubutton.menubutton {
-  position:absolute;
-  background:url('controls.png') no-repeat -101px 0px;
+    display:none;
+    position:absolute;
+  background:url('../images/Extras/Phylojive/controls.png') no-repeat -101px 0px;
   height: 50px;
   width: 50px;
   cursor:pointer;
@@ -117,21 +132,19 @@ background-color:#EEF2F7;
   margin: 0 auto;
   position:relative;
 }
-#right-jitcontainer{
-  /*position:absolute;*/
-  float:right;
-  background-color: white;
-}
+
 #center-jitcontainer {
   width: auto;
 }
 
 #navigationPanel {
-  padding-top:55px;
+  padding-top:15px;
   position:absolute;
+  text-align: center;
+  font-size: 13px;
 }
 .phylojivepadding {
-  margin: 55px 5% 5% 5%;
+  margin: 0px;
 }
 .clearfix:after {
   content: ".";
@@ -148,44 +161,47 @@ background-color:#EEF2F7;
 /* End hide from IE-mac */
 /* @end */
 
-
-
 #right-jitcontainer {
-    width:300px;
+    width:34%;
     color:#686c70;
     text-align: left;
-    overflow: auto;
+    /*overflow: auto;*/
+    background-color: white;
     background-repeat:no-repeat;
-    float:right;
+    float:left;
     font-size:small;
-    position:absolute;
-    right: 0px;
+    /*position:absolute;*/
+    /*right: 0px;*/
     z-index:2;
+    border: 2px solid #464646;
+    border-left: none;
 }
 
+#center-jitcontainer {
+    float:left;
+    color:#ccc;
+    width: 65%;
+    font-size: 14px;
+    border: 2px solid #464646;
+}
 
 #right-jitcontainer, 
 #center-jitcontainer {
     top:0;
 }
 
-#center-jitcontainer {
-    float:left;
-    color:#ccc;
-}
-
 #center-container {
   background-color: white;
 }
+
 #log {
     font-size:1.0em;
     font-weight:bold;
     color:#23A4FF;
     float: none;
-    top: 0;
-    position: relative;
+    /*top: 0;*/
+    /*position: relative;*/
 }
-
 
 #infovis {
     position:relative;
@@ -207,4 +223,84 @@ table {
     margin-top: 0;
     border: 0;
     padding: 0;
+}
+
+table th, table td {
+    padding: 1px 4px;
+}
+
+div.node {
+    vertical-align: top;
+}
+
+#right-jitcontainer #tabs, #right-jitcontainer #accordion {
+    /*height: auto;*/
+    padding: 0;
+    margin: 0;
+    /*overflow-y: scroll;*/
+    border:none;
+    width: 100%;
+}
+
+.ui-tabs-panel {
+    padding: 4px;
+    /*height: 390px;*/
+    overflow-y: scroll;
+}
+
+.ui-accordion .ui-accordion-content {
+    padding: 1em 1em;
+}
+
+#tabs h4 {
+    margin-bottom: 10px;
+}
+
+div.message {
+    font-size: 14px;
+    color: red;
+    padding: 10px 0;
+}
+.inline {
+    display: inline-block;
+}
+
+#breadcrumb {
+    width: 60%;
+}
+
+#newTreeButton {
+    float: right;
+}
+
+
+.frontpage #screenshot {
+    margin-top: -10px;
+    width: 450px;
+    float: right;
+}
+
+.frontpage #description {
+    float: left;
+    width: 500px;
+    font-size: 13px;
+}
+
+figure {
+    margin:0 auto;
+    width: 60%;
+}
+
+figure figcaption {
+    margin: 10px;
+}
+
+figure img {
+    display: inline-block;
+    margin:0 auto;
+}
+
+#create-tree textarea, #edit-tree textarea {
+    width: 560px;
+    height: 200px;
 }

@@ -5,10 +5,8 @@
         
 // params
         	codeBase:'../..',
-            width:900,
-            height:1200,
-	    toolWidget: "tabs",
-hideInput: true,        
+            width: 500,
+            height:1200,        
         	alignName:false,
         	lateralise:false, 
        		levelsToShow:12,
